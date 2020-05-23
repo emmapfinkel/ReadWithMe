@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class FictionLevelHViewController: UIViewController {
+class NonFictionLevelHViewController: UIViewController {
 
     var audioPlayer: AVAudioPlayer?
     
@@ -19,30 +19,28 @@ class FictionLevelHViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
     @IBAction func listenTapped(_ sender: UIButton) {
+    
+        // TAGS:
+        // #1: Listen Button
         
-              
         let selectedRecording = sender.tag
-              
+        
         switch selectedRecording {
         case 1:
-        let pathToRecording = Bundle.main.path(forResource: "HFictionText", ofType: "m4a")
-        let addressToFile = URL(fileURLWithPath: pathToRecording!)
-                  
-        do{
-            audioPlayer = try AVAudioPlayer(contentsOf: addressToFile)
-                      audioPlayer?.play()
-                  } catch {
-                      // error handling
-                  }
-                  
-              default:
-                  return
-              }
-    }
-    
-    
+            let pathToRecording = Bundle.main.path(forResource: "HNonfictionText", ofType: "m4a")
+            let addressToFile = URL(fileURLWithPath: pathToRecording!)
+            
+            do{
+                audioPlayer = try AVAudioPlayer(contentsOf: addressToFile)
+                audioPlayer?.play()
+            } catch {
+                // error handling
+            }
+            
+        default:
+            return
+        }
     }
     
 
@@ -56,4 +54,4 @@ class FictionLevelHViewController: UIViewController {
     }
     */
 
-
+}
