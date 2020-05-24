@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hZw-rZ-UzO">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,11 +37,21 @@
                                     <segue destination="SlU-PR-mPS" kind="show" id="BWV-4J-OYC"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIB-h1-9kD">
+                                <rect key="frame" x="186" y="773" width="22" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ro4-d9-JYz"/>
                     </view>
                     <navigationItem key="navigationItem" id="Vbs-Ct-VXw"/>
+                    <connections>
+                        <outlet property="textsRead" destination="UIB-h1-9kD" id="n1x-za-RlI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUb-Eh-a6N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -171,6 +181,8 @@
                                     <color key="titleColor" red="0.34072778860000003" green="0.51987049399999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="finishReading:" destination="KZd-xs-q5c" eventType="touchUpInside" id="CH8-pp-XdZ"/>
+                                    <action selector="finishTapped:" destination="KZd-xs-q5c" eventType="touchUpInside" id="Xcb-HH-bRA"/>
                                     <segue destination="4qa-Ir-0t0" kind="unwind" unwindAction="unwindToStartReadingViewController:" id="CuP-F9-ss9"/>
                                 </connections>
                             </button>

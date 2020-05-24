@@ -10,6 +10,10 @@ import UIKit
 
 class StartReadingViewController: UIViewController {
     
+    @IBOutlet weak var textsRead: UILabel!
+    
+    var countTextsRead = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,15 +21,14 @@ class StartReadingViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+  
+        if let finishedReading = segue.destination as? NonFictionLevelHViewController {
+            finishedReading.previousVC = self
+        }
     }
-    */
+   
 
     @IBAction func  unwindToStartReadingViewController(_ sender: UIStoryboardSegue) {}
 }

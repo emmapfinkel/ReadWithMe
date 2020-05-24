@@ -11,6 +11,8 @@ import AVFoundation
 
 class NonFictionLevelHViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
 
+    var previousVC = StartReadingViewController()
+    
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var listenButton: UIButton!
@@ -134,7 +136,13 @@ class NonFictionLevelHViewController: UIViewController, AVAudioRecorderDelegate,
        
     }
     
-
+    @IBAction func finishReading(_ sender: Any) {
+        
+        previousVC.countTextsRead = previousVC.countTextsRead + 1
+        
+        previousVC.textsRead.text = "\(previousVC.countTextsRead)"
+        
+    }
     /*
     // MARK: - Navigation
 
